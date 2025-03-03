@@ -1,1 +1,1 @@
-250127PYT174VAK Paskaitų medžiaga
+# 250127PYT174VAK Paskaitų medžiaga

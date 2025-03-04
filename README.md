@@ -15,3 +15,11 @@
     git remote add origin REPOZITORIJOS ADRESAS - Sukurtos github repozitorijos adreso pridėjimas
 
     git push -u origin main - Failų perkėlimo nurodymas
+
+# GIT repozitorijos atnaujinimų komandos:
+
+    git add . - Nurodome norimus pridėti failus
+
+    git commit -m "Nurodome atnaujinimo paskirtį" - Commit'o priskyrimas su žinute
+
+    git push - Pakeitimų perkėlimas

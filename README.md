@@ -31,3 +31,20 @@
 # Repozitorijos pakeitimų atsiuntimas
 
     git pull
+
+# Repozitorijos atšakų (branches) kūrimas
+
+    git branch PAVADINIMAS - Nurodome atšakos inciavimą
+
+    git checkout PAVADINIMAS - Pereiname į naujai sukurtą atšaką
+
+    git push --set-upstream origin PAVADINIMAS - Perkeliame pakeitimus 
+
+
+# Repozitorijos atšakų sujungimas
+
+    git checkout BRANCHAS_I_KURI_PERKELIAME_DUOMENIS
+
+    git merge BRANCHAS_IS_KURIO_IMAME_DUOMENIS
+
+    git push

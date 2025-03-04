@@ -23,3 +23,8 @@
     git commit -m "Nurodome atnaujinimo paskirtį" - Commit'o priskyrimas su žinute
 
     git push - Pakeitimų perkėlimas
+
+# Repozitorijos klonavimas:
+
+    git clone REPOZITORIJOS_ADRESAS
+

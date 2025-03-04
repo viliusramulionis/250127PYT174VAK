@@ -28,3 +28,6 @@
 
     git clone REPOZITORIJOS_ADRESAS
 
+# Repozitorijos pakeitimų atsiuntimas
+
+    git pull

@@ -45,5 +45,59 @@
         <li>Antras</li>
         <li>Trečias</li>
     </ol>
+
+    <!-- Formos -->
+
+    <form>
+        <div>
+            <label>Įveskite vardą:</label>
+            <input name="vardas" type="text">
+        </div>
+        <div>
+            <label>Įkelkite failą:</label>
+            <input name="failas" type="file">
+        </div>
+        <div>
+            <button>Siųsti</button>
+        </div>
+        <div>
+            <select name="grupe">
+                <option>A</option>
+                <option value="1">B</option>
+                <option value="2">C</option>
+                <option value="3">D</option>
+            </select>
+        </div>
+        <div>
+            <input type="checkbox">
+        </div>
+        <div>
+            <input type="number">
+        </div>
+        <div>
+            <input type="password">
+        </div>
+    </form>
+
+    <h1>Lentelės</h1>
+
+    <!-- Lentelės -->
+    <!-- Lentelėje stuleplių kiekis visuomet vienodas kiek ir eilutėje (jeigu nėra colspan arba rowspan atributo) -->
+    <table border="1">
+        <!-- table row (eilute) -->
+        <tr>
+            <!-- table data (stulpelis) -->
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td rowspan="2">D</td>
+        </tr>
+        <tr>
+            <!-- table data (stulpelis) -->
+            <td>E</td>
+            <td>F</td>
+            <td>G</td>
+        </tr>
+    </table>
 </body>
 </html>

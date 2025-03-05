@@ -48,3 +48,8 @@
     git merge BRANCHAS_IS_KURIO_IMAME_DUOMENIS
 
     git push
+
+# Failų trynimas iš repozitorijos atšakos
+
+    git rm -rf . - rm nurodo trynimo iniciavimą, -rf nurodo, jog jeigu triname direktoriją, būtų pašalinti vidiniai failai, o taškas nurodo ką triname
+

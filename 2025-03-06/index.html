@@ -12,8 +12,46 @@
             color: red;
         }
 
+        /* Klasės selektorius */
         .pagrindine-antraste {
             color: purple;
+        }
+
+        /* id selektorius */
+        /* žymimas grotelėmis */
+
+        #unikalus {
+            color: blue;
+        }
+
+        /* Atributo selektorius */
+
+        [title="Idomus tekstas"] {
+            color: brown;
+        }
+
+        /* Filtravimas pagal atributa nenurodant reikšmės */
+
+        [alt] {
+            color: red;
+        }
+
+        /* https://www.w3schools.com/cssref/sel_nth-child.php */
+
+        /* ul li:nth-child(1) {
+            color: blue;
+        }
+
+        ul li:nth-child(2) {
+            color: green;
+        }
+
+        ul li:nth-child(3) {
+            color: red;
+        } */
+
+        div ul:nth-child(1) li:nth-child(2) {
+            color: green;
         }
     </style>
 </head>
@@ -31,5 +69,33 @@
     <h1>Apie Mus</h1>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, placeat.</p>
+
+    <p id="unikalus">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, placeat.</p>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, placeat.</p>
+
+    <p title="Idomus tekstas">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At optio a nobis molestias illum aperiam.</p>
+    
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At optio a nobis molestias illum aperiam.</p>
+
+    <p alt="Alternatyvus tekstas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, officiis itaque! Quod delectus optio quo!</p>
+    
+    <p alt="Dar idomesnis tekstas">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, officiis itaque! Quod delectus optio quo!</p>
+
+    <h3>Sąrašas</h3>
+    
+    <div>
+        <ul>
+            <li>Pirmas</li>
+            <li>Antras</li>
+            <li>Trečias</li>
+        </ul>
+
+        <ul>
+            <li>Pirmas</li>
+            <li>Antras</li>
+            <li>Trečias</li>
+        </ul>
+    </div>
 </body>
 </html>

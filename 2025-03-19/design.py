@@ -12,20 +12,23 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(727, 530)
+        Dialog.resize(727, 211)
         font = QtGui.QFont()
         font.setFamily("Candara")
         font.setPointSize(14)
         Dialog.setFont(font)
         Dialog.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.mygtukai = QtWidgets.QDialogButtonBox(parent=Dialog)
-        self.mygtukai.setGeometry(QtCore.QRect(350, 470, 341, 32))
+        self.mygtukai.setGeometry(QtCore.QRect(320, 140, 341, 32))
         self.mygtukai.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.mygtukai.setStandardButtons(QtWidgets.QDialogButtonBox.StandardButton.Cancel|QtWidgets.QDialogButtonBox.StandardButton.Ok)
         self.mygtukai.setObjectName("mygtukai")
         self.laukelis = QtWidgets.QLineEdit(parent=Dialog)
         self.laukelis.setGeometry(QtCore.QRect(60, 80, 601, 41))
         self.laukelis.setObjectName("laukelis")
+        self.label = QtWidgets.QLabel(parent=Dialog)
+        self.label.setGeometry(QtCore.QRect(60, 50, 211, 21))
+        self.label.setObjectName("label")
 
         self.retranslateUi(Dialog)
         self.mygtukai.accepted.connect(Dialog.accept) # type: ignore
@@ -35,3 +38,4 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Mano Pirma Aplikacija"))
+        self.label.setText(_translate("Dialog", "Įveskite failo pavadinimą:"))

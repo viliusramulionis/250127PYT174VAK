@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>727</width>
-    <height>530</height>
+    <height>211</height>
    </rect>
   </property>
   <property name="font">
@@ -25,8 +25,8 @@
   <widget class="QDialogButtonBox" name="mygtukai">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>470</y>
+     <x>320</x>
+     <y>140</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -46,6 +46,19 @@
      <width>601</width>
      <height>41</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>50</y>
+     <width>211</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Įveskite failo pavadinimą:</string>
    </property>
   </widget>
  </widget>

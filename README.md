@@ -53,3 +53,19 @@
 
     git rm -rf . - rm nurodo trynimo iniciavimą, -rf nurodo, jog jeigu triname direktoriją, būtų pašalinti vidiniai failai, o taškas nurodo ką triname
 
+# PyQt6 aplikacijos direktorijos paruošimas
+
+VS code atsidarome norimą aplanką kuriame dirbsime. Aktyvuojame virtualią aplinką su komanda:
+
+    py -m venv venv
+    call venv/Scripts/activate.bat 
+
+    ARBA
+
+    source venv/bin/activate
+
+Instaliuojame biblioteką:
+
+    pip install PyQt6
+
+

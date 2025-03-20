@@ -68,4 +68,8 @@ Instaliuojame biblioteką:
 
     pip install PyQt6
 
+PyQt6 Dizainerio failo konvertavimas:
+
+    py -m PyQt6.uic.pyuic FAILO_PAVADINIMAS -o PYTHON_FAILO_PAVADINIMAS
+
 

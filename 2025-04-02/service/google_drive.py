@@ -1,39 +1,39 @@
-import os
-import pickle
-from google.auth.transport.requests import Request
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from email.mime.text import MIMEText
-from base64 import urlsafe_b64encode
+from service.google_api import GoogleApi
+from googleapiclient.http import MediaFileUpload
 
-class GoogleDrive() :
-    SCOPES = ['https://www.googleapis.com/auth/drive']
-    token_file = 'drive.pickle'
-
+class GoogleDrive(GoogleApi) :
     def __init__(self) :
+        super().__init__('https://www.googleapis.com/auth/drive', 'drive', 'v3')
+
         print("Google Drive")
-        self.service = self.drive_authenticate()
 
-    def drive_authenticate(self):
-        creds = None
-        
-        # Tikriname ar egizstuoja failas pavadinimu token.pickle
-        # Po sėkmingos autentifikacijos Google servisas išduoda raktą angliškai token
-        # Raktą išssaugome specifiniu formatu .pickle
-        if os.path.exists(self.token_file):
-            with open(self.token_file, "rb") as token:
-                creds = pickle.load(token)
-        
-        # Jeigu nėra rasta jokio registruoto rakto:
-        if not creds or not creds.valid:
-            if creds and creds.expired and creds.refresh_token:
-                creds.refresh(Request())
-            else:
-                flow = InstalledAppFlow.from_client_secrets_file('credentials.json', self.SCOPES)
-                creds = flow.run_local_server(port=0)
+        self.service = self.google_authenticate()
 
-            # save the credentials for the next run
-            with open(self.token_file, "wb") as token:
-                pickle.dump(creds, token)
+    def failu_sarasas(self, query = "") :
+        response = self.service.files().list(q = query).execute()
 
-        return build('drive', 'v3', credentials=creds)
+        files = response.get("files")
+
+        next = response.get("nextPageToken")
+
+        while next : 
+            response = self.service.files().list(q = query).execute()
+            
+            files.extend(response.get("files"))
+
+            next = response.get("nextPageToken")
+
+        return files
+    
+    def failo_ikelimas(self, failas, failo_pavadinimas, direktorijos = []) :
+        body = { "name" : failo_pavadinimas, "parents" : direktorijos}
+        # Failo paėmimas iš esamos direktorijos
+        media_body = MediaFileUpload(failas)
+        # Failo perkėlimo iniciavimas
+        return self.service.files().create(body = body, media_body = media_body).execute()
+    
+    def failo_pervadinimas(self, senoId, naujas) :
+        return self.service.files().update(fileId = senoId, body = { "name" : naujas }).execute()
+    
+    def failo_istrynimas(self, id) :
+        return self.service.files().update(fileId = id, body = { "trashed" : True }).execute()
